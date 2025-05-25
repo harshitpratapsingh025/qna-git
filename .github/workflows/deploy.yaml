@@ -19,7 +19,13 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: '20'
-  
+
+        - uses: actions/cache@v4
+          id: npm-cache
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
         - name: Install dependencies
           run: npm ci
   
@@ -45,7 +51,13 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: '20'
-  
+            
+        - uses: actions/cache@v4
+          id: npm-cache
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
         - name: Install dependencies
           run: npm ci
 
