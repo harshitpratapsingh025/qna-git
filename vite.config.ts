@@ -10,4 +10,5 @@ export default defineConfig({
     globals: true,
     setupFiles: './setupTests.ts',
   },
+  base: '/qna-git/'
 });
