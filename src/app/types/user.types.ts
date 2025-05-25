@@ -10,3 +10,8 @@ export interface User {
   status: UserStatus;
   avatarUrl?: string;
 }
+
+export interface LoginPayload {
+  username: string;
+  password: string;
+}

@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LoginPayload } from '../../types';
 
 // Define the initial state for the auth slice
 const initialState = {
@@ -14,8 +15,8 @@ const authSlice = createSlice({
   reducers: {
     // Reducer functions to update the state
     // Set the status to 'pending' when login starts
-    loginUser(state) {
-      state.status = 'pending';
+    loginUser: (state, action: PayloadAction<LoginPayload>) =>  {
+      state.status = action.payload.username;
     },
     // Update user data and set status to 'complete' on successful login
     loginUserSuccess(state, action) {
