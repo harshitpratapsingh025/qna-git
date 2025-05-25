@@ -7,13 +7,16 @@ on:
         - feature/**
 
       paths-ignore:
-        - '.github/workflow/*'
+        - '.github/workflows/*'
         - README.md
         
     pull_request:
       branches:
         - main
         - develop
+
+    workflow_dispatch:
+      
 jobs:
     build-and-test:
         runs-on: ubuntu-latest
